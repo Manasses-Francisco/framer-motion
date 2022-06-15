@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { PizzaProps } from "../App";
+import {motion} from "framer-motion";
 
 export interface ToppingsProps {
   addTopping: (topping: string) => void;
@@ -31,10 +32,23 @@ export function Toppings({ addTopping, pizza }: ToppingsProps) {
           );
         })}
       </ul>
-
-      <Link to="/order">
-        <button>Order</button>
-      </Link>
+      <motion.div
+        initial={{x:"-100vw"}}
+        animate={{x:0}}
+        transition={{type:'spring',stiffness:120}}
+      >
+        <Link to="/order">
+          <motion.button
+            whileHover={{
+              scale:1.1,
+              textShadow:"0px 0px 8px rgb(255,255,255)",
+              boxShadow:"0px 0px 8px rgb(255,255,255)"
+            }}
+          >
+            Order
+          </motion.button>
+        </Link>
+      </motion.div>
     </div>
   );
 }
