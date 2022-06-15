@@ -21,6 +21,7 @@ export function Base({ addBase, pizza }: BaseProps) {
       <ul>
         {bases.map((base) => {
           let spanClass = pizza.base === base ? "active" : "";
+        
 
           return (
             <li key={base} onClick={() => addBase(base)}>
