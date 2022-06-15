@@ -12,7 +12,7 @@ export function Home(){
             <h2>Welcome to Pizza Joint</h2>
             <Link to="/base">
                 <motion.button
-                    animate={{}}
+                    whileHover={{scale:1.1}}
                 >
                     Create Your Pizza
                 </motion.button>
